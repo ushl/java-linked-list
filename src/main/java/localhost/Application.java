@@ -2,8 +2,6 @@ package localhost;
 
 import localhost.linkedlist.MyLinkedListImpl;
 import localhost.linkedlist.MyList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 /**
@@ -12,7 +10,6 @@ import org.slf4j.LoggerFactory;
  * We populate the list and output it from both directions.
  */
 public class Application {
-	private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
 		/*
@@ -25,32 +22,32 @@ public class Application {
 		for (int i = 0; i < totalElements; i++) {
 			linkedList.add(i + 1);
 		}
-		LOGGER.info(String.format("Created a list of %d elements. Here's the list:", linkedList.size()));
+		System.out.format("Created a list of %d elements. Here's the list:%n", linkedList.size());
 
 		/*
 		 * List elements in ascending order.
 		 */
 
 		linkedList.setPositionFirst();
-		LOGGER.info(String.format("Position %d: %d", linkedList.getPosition(), linkedList.getElement()));
+		System.out.format("Position %d: %d%n", linkedList.getPosition(), linkedList.getElement());
 
 		while (linkedList.hasNext()) {
 			linkedList.next();
-			LOGGER.info(String.format("Position %d: %d", linkedList.getPosition(), linkedList.getElement()));
+			System.out.format("Position %d: %d%n", linkedList.getPosition(), linkedList.getElement());
 		}
 
 		/*
 		 * List elements in descending order.
 		 */
 
-		LOGGER.info("Here is the list in descending order:");
+		System.out.println("Here is the list in descending order:");
 
 		linkedList.setPositionLast();
-		LOGGER.info(String.format("Position %d: %d", linkedList.getPosition(), linkedList.getElement()));
+		System.out.format("Position %d: %d%n", linkedList.getPosition(), linkedList.getElement());
 
 		while (linkedList.hasPrev()) {
 			linkedList.prev();
-			LOGGER.info(String.format("Position %d: %d", linkedList.getPosition(), linkedList.getElement()));
+			System.out.format("Position %d: %d%n", linkedList.getPosition(), linkedList.getElement());
 		}
 	}
 
